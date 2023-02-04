@@ -1,8 +1,7 @@
 #!/bin/bash
-Head=0;
-Tail=0;
-while [ $Head -le 21 -a $Tail -le 21 ]
-do
+Head=21;
+Tail=21;
+function myFunction() {
 result=$((RANDOM%2));
 if [ $result -eq 0 ]
 then 
@@ -10,6 +9,11 @@ then
 else
 	Tail=$(($Tail+1));
 fi
+No_of_Flip[((count++))]=$result;
+}
+while [ $Head -lt 21 -a $Tail -lt 21 ]
+do 
+	myFunction
 done
 if [ $Head -gt $Tail ]
 then
@@ -20,5 +24,10 @@ then
 	Win=$(($Tail-$Head));
 	echo "Tail is won by $Win"
 else
-	echo "Head and Tail Tie"
+	while [ $(($Head-$Tail)) -le 2 -a $(($Tail-$Head)) -le 2 ]
+	do
+	myFunction
+	echo "Head is equal to $Head and Tail is equal to $Tail"
+	done
 fi
+echo "No of flip by coins are ${!No_of_Flip[@]}"
