@@ -24,7 +24,7 @@ then
 	Win=$(($Tail-$Head));
 	echo "Tail is won by $Win"
 else
-	while [ $(($Head-$Tail)) -le 2 -a $(($Tail-$Head)) -le 2 ]
+	while [ $(($Head-$Tail)) -lt 2 -a $(($Tail-$Head)) -lt 2 ]
 	do
 	myFunction
 	echo "Head is equal to $Head and Tail is equal to $Tail"
