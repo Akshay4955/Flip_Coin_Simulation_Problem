@@ -1,6 +1,6 @@
 #!/bin/bash
-Head=21;
-Tail=21;
+Head=0;
+Tail=0;
 function myFunction() {
 result=$((RANDOM%2));
 if [ $result -eq 0 ]
