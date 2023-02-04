@@ -1,7 +1,7 @@
 #!/bin/bash
 Head=0;
 Tail=0;
-while [ $Head -le 21 -a $Tail -le 21 ]
+while [ $Head -lt 21 -a $Tail -lt 21 ]
 do
 result=$((RANDOM%2));
 if [ $result -eq 0 ]
